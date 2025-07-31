@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Banner with Moving Underline</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/index.js" defer></script>
+
+    <!-- Bootstrap & Font Awesome -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Your CSS -->
+    <link rel="stylesheet" href="css/index.css">
+
+
+</head>
+
+<body>
+    <!-- === Banner Section === -->
+    <div class="banner-wrapper">
+        <div class="banner-text">
+            <a href="#">Use code - 123456 to get 5% off and ENJOY!</a>
+        </div>
+        <div class="marquee-line"></div>
+    </div>
+    <!-- === Navigation Header === -->
+    <header>
+        <nav class="navbar z-50 flex items-center justify-between h-[97px] text-white hover:bg-white/50 transition duration-500"
+            style="background-color:rgba(255, 255, 255, 0.5);">
+
+            <div class="container-fluid flex justify-between items-center">
+                <div class="logo-container flex items-center">
+                    <a class="navbar-brand " href="#" id="brand">
+                        <img src="images/logo.png" alt="Logo" class="h-[85px] w-auto logo-hover drop-shadow-lg">
+                    </a>
+                </div>
+
+                <div
+                    class="navbar-center hidden md:flex items-center space-x-4 absolute left-1/2 transform -translate-x-1/2">
+                    <a href="index.html" class="nav-link px-4 py-2 rounded-lg font-medium">HOME</a>
+                    <a href="product_p.html" class="nav-link px-4 py-2 rounded-lg font-medium">PRODUCT</a>
+                    <a href="contact.html" class="nav-link px-4 py-2 rounded-lg font-medium">CONTACT</a>
+                    <a href="about.html" class="nav-link px-4 py-2 rounded-lg font-medium">ABOUT</a>
+                </div>
+
+                <!-- Right Side Icons -->
+                <div id="right-icons" class="flex items-center space-x-4 relative">
+                    <!-- Search icon only -->
+                    <button id="searchBtn"
+                        class="text-white hover:text-gray-200 transition-all duration-300 ease-out p-2 rounded-full hover:bg-white hover:bg-opacity-20 hover:scale-110 relative z-20">
+                        <i class="fas fa-search text-lg"></i>
+                    </button>
+
+                    <!-- Search input: hidden on mobile -->
+                    <input type="text" id="searchBar"
+                        class="search-bar px-4 py-2 rounded-full bg-white bg-opacity-90 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                        placeholder="Search here...">
+
+                    <!-- Cart -->
+                    <button
+                        class="cart-btnn  hover:text-gray-200 transition-all p-2 rounded-full hover:bg-white hover:bg-opacity-20 flex items-center relative z-20"
+                        id="cart-toggle">
+                        <i class="fas fa-shopping-cart text-lg"></i>
+                        <span class="cart-text text-sm font-medium">Cart</span>
+
+                    </button>
+
+                    <!-- Account -->
+                    <button
+                        class="account-btn text-white hover:text-gray-200 transition-all p-2 rounded-full hover:bg-white hover:bg-opacity-20 flex items-center relative z-20">
+                        <i class="fas fa-user text-lg"></i>
+                        <span class="account-text text-sm font-medium">Account</span>
+                    </button>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobileMenuBtn"
+                        class="md:hidden text-white hover:text-gray-200 transition-colors p-2 relative z-20">
+                        <i class="fas fa-bars text-lg"></i>
+                    </button>
+                </div>
+
+                <div id="mobileMenu"
+                    class="mobile-menu md:hidden absolute top-full left-0 w-full bg-black bg-opacity-95 backdrop-blur-lg">
+                    <div class="flex flex-col space-y-4 p-6">
+                        <a href="#" class="nav-link text-white px-4 py-3 rounded-lg font-medium">HOME</a>
+                        <a href="#" class="nav-link text-white px-4 py-3 rounded-lg font-medium">PRODUCT</a>
+                        <a href="#" class="nav-link text-white px-4 py-3 rounded-lg font-medium">CONTACT</a>
+                        <a href="#" class="nav-link text-white px-4 py-3 rounded-lg font-medium">ABOUT</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Hero Section -->
+    <section class="about-bg text-white" style="height: 95px;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col justify-end h-64 pb-10">
+        </div>
+    </section>
+
+    <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-800 mb-4" style="margin-top: 2%;">About Us</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            Discover our journey, our team, and the passion that drives us forward every day.
+        </p>
+    </div>
+    <!-- Image Collage Grid -->
+    <!-- <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12"> -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12 mx-7 lg:mx-14">
+        <!-- Large Featured Image -->
+        <div class="lg:col-span-2 lg:row-span-2 hidden sm:block">
+            <div class="collage-item  h-[410px] bg-gray-200 rounded-2xl overflow-hidden shadow-lg">
+                <!-- Replace this div with your main team image -->
+                <img src="images/coffee.jpg" alt="Our Team" class="w-full h-full object-cover">
+            </div>
+        </div>
+
+        <!-- Office Space -->
+        <div class="collage-item h-48 bg-gray-200 rounded-2xl overflow-hidden shadow-lg">
+            <!-- Replace this div with your office image -->
+            <img src="images/orange.jpg" alt="Our Office" class="w-full h-full object-cover">
+        </div>
+
+        <!-- Company Culture -->
+        <div class="collage-item h-48 bg-gray-200 rounded-2xl overflow-hidden shadow-lg">
+            <!-- Replace this div with your company culture image -->
+            <img src="images/label.jpg" alt="Our Values" class="w-full h-full object-cover">
+        </div>
+
+        <!-- Innovation -->
+        <div class="collage-item h-48 bg-gray-200 rounded-2xl overflow-hidden shadow-lg">
+            <!-- Replace this div with your innovation image -->
+            <img src="images/soap.jpg" alt="Innovation" class="w-full h-full object-cover">
+        </div>
+
+        <!-- Growth -->
+        <div class="collage-item h-48 bg-gray-200 rounded-2xl overflow-hidden shadow-lg">
+            <!-- Replace this div with your growth/success image -->
+            <img src="images/beehive_bliss.jpg" alt="Growth" class="w-full h-full object-cover">
+        </div>
+    </div>
+
+
+    <!-- Image Gallery Section -->
+    <section class="py-20 ">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">What Drives Us</h2>
+                <div class="w-16 h-1 bg-indigo-600 mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Mission Card -->
+                <div class="group relative">
+                    <div
+                        class="bg-gradient-to-br from-indigo-50 to-blue-50 rounded-2xl p-8 text-center card-hover border border-indigo-100">
+                        <div
+                            class="w-20 h-20 bg-indigo-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Our Mission</h3>
+                        <p class="text-gray-600 leading-relaxed">Creating innovative solutions that empower businesses
+                            and transform lives through technology.</p>
+                    </div>
+                </div>
+
+                <!-- Team Card -->
+                <div class="group relative md:mt-8">
+                    <div
+                        class="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-8 text-center card-hover border border-emerald-100">
+                        <div
+                            class="w-20 h-20 bg-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Our Team</h3>
+                        <p class="text-gray-600 leading-relaxed">Talented individuals united by passion, creativity, and
+                            commitment to excellence in everything we do.</p>
+                    </div>
+                </div>
+
+                <!-- Values Card -->
+                <div class="group relative">
+                    <div
+                        class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-8 text-center card-hover border border-purple-100">
+                        <div
+                            class="w-20 h-20 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Our Values</h3>
+                        <p class="text-gray-600 leading-relaxed">Integrity, innovation, and customer satisfaction are
+                            the pillars that guide our decisions and actions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Story Section -->
+    <div class="rounded-3xl p-7 md:p-12 ">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h3 class="text-3xl font-bold text-gray-800 mb-6">Our Story</h3>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    Founded with a vision to make a difference, our company has grown from a small team of
+                    passionate individuals to a thriving organization that serves customers worldwide.
+                </p>
+                <p class="text-gray-600 mb-8 leading-relaxed">
+                    We believe in innovation, collaboration, and creating solutions that truly matter. Every day, we
+                    work together to push boundaries and exceed expectations.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <div class="bg-blue-50 px-4 py-2 rounded-full">
+                        <span class="text-blue-600 font-semibold">🚀 Innovation</span>
+                    </div>
+                    <div class="bg-green-50 px-4 py-2 rounded-full">
+                        <span class="text-green-600 font-semibold">🤝 Collaboration</span>
+                    </div>
+                    <div class="bg-purple-50 px-4 py-2 rounded-full">
+                        <span class="text-purple-600 font-semibold">💡 Excellence</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="grid grid-cols-2 gap-6">
+                <div class="text-center p-6 bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl">
+                    <div class="text-3xl font-bold text-blue-600 mb-2">500+</div>
+                    <div class="text-gray-600">Happy Clients</div>
+                </div>
+                <div class="text-center p-6 bg-gradient-to-br from-green-50 to-teal-50 rounded-2xl">
+                    <div class="text-3xl font-bold text-green-600 mb-2">50+</div>
+                    <div class="text-gray-600">Team Members</div>
+                </div>
+                <div class="text-center p-6 bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl">
+                    <div class="text-3xl font-bold text-purple-600 mb-2">5+</div>
+                    <div class="text-gray-600">Years Experience</div>
+                </div>
+                <div class="text-center p-6 bg-gradient-to-br from-yellow-50 to-orange-50 rounded-2xl">
+                    <div class="text-3xl font-bold text-orange-600 mb-2">1000+</div>
+                    <div class="text-gray-600">Projects Done</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <br>
+    <br>
+    <!-- Footer -->
+    <footer class="footer-gradient footer-content mt-auto" style="margin-top: 5%;">
+        <div class="max-w-6xl mx-auto px-6 py-12">
+
+            <!-- Main Footer Content -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+
+                <!-- Contact Email -->
+                <div class="text-center md:text-left">
+                    <h3 class="text-white text-xl font-semibold mb-4">Get In Touch</h3>
+                    <div class="contact-item">
+                        <a href="mailto:hello@company.com"
+                            class="inline-flex items-center text-white/90 hover:text-white text-lg">
+                            <i class="fas fa-envelope mr-3 text-xl"></i>
+                            hello@company.com
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Details -->
+                <div class="text-center md:text-left">
+                    <h3 class="text-white text-xl font-semibold mb-4">Contact Info</h3>
+                    <div class="space-y-3">
+                        <div class="contact-item">
+                            <div class="inline-flex items-center text-white/90 hover:text-white">
+                                <i class="fas fa-phone mr-3 text-lg"></i>
+                                +1 (555) 123-4567
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="inline-flex items-center text-white/90 hover:text-white">
+                                <i class="fas fa-map-marker-alt mr-3 text-lg"></i>
+                                New York, NY 10001
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Icons -->
+                <div class="text-center lg:text-right">
+                    <h3 class="text-white text-xl font-semibold mb-4">Follow Us</h3>
+                    <div class="flex justify-center lg:justify-end space-x-4">
+                        <a href="#"
+                            class="social-icon bg-white/10 hover:bg-white/20 p-3 rounded-full text-white hover:text-white">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="#"
+                            class="social-icon bg-white/10 hover:bg-white/20 p-3 rounded-full text-white hover:text-white">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#"
+                            class="social-icon bg-white/10 hover:bg-white/20 p-3 rounded-full text-white hover:text-white">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#"
+                            class="social-icon bg-white/10 hover:bg-white/20 p-3 rounded-full text-white hover:text-white">
+                            <i class="fab fa-linkedin-in text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-white/20 pt-6">
+                <div class="flex flex-col md:flex-row justify-between items-center text-white/80 text-sm">
+                    <p>&copy; 2024 Your Company. All rights reserved.</p>
+                    <div class="flex space-x-6 mt-4 md:mt-0">
+                        <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                        <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

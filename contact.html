@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Banner with Moving Underline</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/index.js" defer></script>
+
+    <!-- Bootstrap & Font Awesome -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Your CSS -->
+    <link rel="stylesheet" href="css/index.css">
+
+</head>
+
+<body>
+    <!-- === Banner Section === -->
+    <div class="banner-wrapper">
+        <div class="banner-text">
+            <a href="#">Use code - 123456 to get 5% off and ENJOY!</a>
+        </div>
+        <div class="marquee-line"></div>
+    </div>
+    <!-- === Navigation Header === -->
+    <header>
+        <nav class="navbar z-50 flex items-center justify-between h-[97px] text-white hover:bg-white/50 transition duration-500"
+            style="background-color:rgba(255, 255, 255, 0.5);">
+
+            <div class="container-fluid flex justify-between items-center">
+                <div class="logo-container flex items-center">
+                    <a class="navbar-brand " href="#" id="brand">
+                        <img src="images/logo.png" alt="Logo" class="h-[85px] w-auto logo-hover drop-shadow-lg">
+                    </a>
+                </div>
+
+                <div
+                    class="navbar-center hidden md:flex items-center space-x-4 absolute left-1/2 transform -translate-x-1/2">
+                    <a href="index.html" class="nav-link px-4 py-2 rounded-lg font-medium">HOME</a>
+                    <a href="product_p.html" class="nav-link px-4 py-2 rounded-lg font-medium">PRODUCT</a>
+                    <a href="contact.html" class="nav-link px-4 py-2 rounded-lg font-medium">CONTACT</a>
+                    <a href="about.html
+                    " class="nav-link px-4 py-2 rounded-lg font-medium">ABOUT</a>
+                </div>
+
+                <!-- Right Side Icons -->
+                <div id="right-icons" class="flex items-center space-x-4 relative">
+                    <!-- Search icon only -->
+                    <button id="searchBtn"
+                        class="text-white hover:text-gray-200 transition-all duration-300 ease-out p-2 rounded-full hover:bg-white hover:bg-opacity-20 hover:scale-110 relative z-20">
+                        <i class="fas fa-search text-lg"></i>
+                    </button>
+
+                    <!-- Search input: hidden on mobile -->
+                    <input type="text" id="searchBar"
+                        class="search-bar px-4 py-2 rounded-full bg-white bg-opacity-90 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                        placeholder="Search here...">
+
+                    <!-- Cart -->
+                    <button
+                        class="cart-btnn  hover:text-gray-200 transition-all p-2 rounded-full hover:bg-white hover:bg-opacity-20 flex items-center relative z-20"
+                        id="cart-toggle">
+                        <i class="fas fa-shopping-cart text-lg"></i>
+                        <span class="cart-text text-sm font-medium">Cart</span>
+
+                    </button>
+
+                    <!-- Account -->
+                    <button
+                        class="account-btn text-white hover:text-gray-200 transition-all p-2 rounded-full hover:bg-white hover:bg-opacity-20 flex items-center relative z-20">
+                        <i class="fas fa-user text-lg"></i>
+                        <span class="account-text text-sm font-medium">Account</span>
+                    </button>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobileMenuBtn"
+                        class="md:hidden text-white hover:text-gray-200 transition-colors p-2 relative z-20">
+                        <i class="fas fa-bars text-lg"></i>
+                    </button>
+                </div>
+
+                <div id="mobileMenu"
+                    class="mobile-menu md:hidden absolute top-full left-0 w-full bg-black bg-opacity-95 backdrop-blur-lg">
+                    <div class="flex flex-col space-y-4 p-6">
+                        <a href="#" class="nav-link text-white px-4 py-3 rounded-lg font-medium">HOME</a>
+                        <a href="#" class="nav-link text-white px-4 py-3 rounded-lg font-medium">PRODUCT</a>
+                        <a href="#" class="nav-link text-white px-4 py-3 rounded-lg font-medium">CONTACT</a>
+                        <a href="#" class="nav-link text-white px-4 py-3 rounded-lg font-medium">ABOUT</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Hero Section -->
+    <section class="about-bg text-white" style="height: 95px;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col justify-end h-64 pb-10">
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Header Section -->
+        <div class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Get In Touch</h1>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">We'd love to hear from you. Send us a message and we'll
+                respond as soon as possible.</p>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="max-w-6xl mx-auto mb-20">
+            <div class="rounded-2xl form-shadow p-8 md:p-12">
+                <form id="contactForm" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-2 ">Full Name</label>
+                            <input type="text" id="name" name="name" required
+                                class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition duration-300 outline-none"
+                                placeholder="Your full name">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email
+                                Address</label>
+                            <input type="email" id="email" name="email" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition duration-300 outline-none"
+                                placeholder="your.email@example.com">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                        <textarea id="message" name="message" rows="6" required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition duration-300 outline-none resize-none"
+                            placeholder="Tell us how we can help you..."></textarea>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit"
+                            class="gradient-bg text-white px-8 py-4 rounded-lg font-semibold text-lg hover:opacity-90 transform hover:scale-105 transition duration-300 shadow-lg">
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- Features Section -->
+        <div class="rounded-2xl p-8 md:p-12 mb-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Quality First -->
+                <div class="feature-card text-center p-6 rounded-xl bg-gradient-to-br from-blue-50 to-blue-100">
+                    <div
+                        class="w-16 h-16 mx-auto mb-4 bg-blue-500 rounded-full flex items-center justify-center pulse-animation">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Quality First</h3>
+                    <p class="text-gray-600">We prioritize excellence in everything we do, ensuring top-notch quality in
+                        all our services.</p>
+                </div>
+
+                <!-- Easy Returns -->
+                <div class="feature-card text-center p-6 rounded-xl bg-gradient-to-br from-green-50 to-green-100">
+                    <div
+                        class="w-16 h-16 mx-auto mb-4 bg-green-500 rounded-full flex items-center justify-center pulse-animation">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Easy Returns</h3>
+                    <p class="text-gray-600">Hassle-free return policy with simple processes to ensure your complete
+                        satisfaction.</p>
+                </div>
+
+                <!-- 24/7 Support -->
+                <div class="feature-card text-center p-6 rounded-xl bg-gradient-to-br from-purple-50 to-purple-100">
+                    <div
+                        class="w-16 h-16 mx-auto mb-4 bg-purple-500 rounded-full flex items-center justify-center pulse-animation">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M12 2.25a9.75 9.75 0 100 19.5 9.75 9.75 0 000-19.5z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">24/7 Support</h3>
+                    <p class="text-gray-600">Round-the-clock customer support to assist you whenever you need help or
+                        guidance.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+    <!-- Footer -->
+    <footer class="footer-gradient footer-content mt-auto" style="margin-top: 5%;">
+        <div class="w-full px-6 py-12">
+
+            <!-- Main Footer Content -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+                <!-- Contact Email -->
+                <div class="text-center md:text-left">
+                    <h3 class="text-white text-xl font-semibold mb-4">Get In Touch</h3>
+                    <div class="contact-item">
+                        <a href="mailto:hello@company.com"
+                            class="inline-flex items-center text-white/90 hover:text-white text-lg">
+                            <i class="fas fa-envelope mr-3 text-xl"></i>
+                            hello@company.com
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Details -->
+                <div class="text-center md:text-left">
+                    <h3 class="text-white text-xl font-semibold mb-4">Contact Info</h3>
+                    <div class="space-y-3">
+                        <div class="contact-item">
+                            <div class="inline-flex items-center text-white/90 hover:text-white">
+                                <i class="fas fa-phone mr-3 text-lg"></i>
+                                +1 (555) 123-4567
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="inline-flex items-center text-white/90 hover:text-white">
+                                <i class="fas fa-map-marker-alt mr-3 text-lg"></i>
+                                New York, NY 10001
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Icons -->
+                <div class="text-center lg:text-right">
+                    <h3 class="text-white text-xl font-semibold mb-4">Follow Us</h3>
+                    <div class="flex justify-center lg:justify-end space-x-4">
+                        <a href="#"
+                            class="social-icon bg-white/10 hover:bg-white/20 p-3 rounded-full text-white hover:text-white">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="#"
+                            class="social-icon bg-white/10 hover:bg-white/20 p-3 rounded-full text-white hover:text-white">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#"
+                            class="social-icon bg-white/10 hover:bg-white/20 p-3 rounded-full text-white hover:text-white">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#"
+                            class="social-icon bg-white/10 hover:bg-white/20 p-3 rounded-full text-white hover:text-white">
+                            <i class="fab fa-linkedin-in text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-white/20 pt-6">
+                <div class="flex flex-col md:flex-row justify-between items-center text-white/80 text-sm">
+                    <p>&copy; 2024 Your Company. All rights reserved.</p>
+                    <div class="flex space-x-6 mt-4 md:mt-0">
+                        <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                        <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    </script>
+    <script>(function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'96551590959f3f68',t:'MTc1MzU0NTM1Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
+
+</body>
+
+</html>

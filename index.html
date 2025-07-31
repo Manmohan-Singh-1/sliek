@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Banner with Moving Underline</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/index.js" defer></script>
+
+    <!-- Bootstrap & Font Awesome -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Your CSS -->
+    <link rel="stylesheet" href="css/index.css">
+
+
+</head>
+
+<body class="custom-theme">
+    <!-- === Banner Section === -->
+    <div class="banner-wrapper">
+        <div class="banner-text">
+            <a href="#">Use code - 123456 to get 5% off and ENJOY!</a>
+        </div>
+        <div class="marquee-line"></div>
+    </div>
+
+    <!-- === Navigation Header === -->
+    <header>
+        <nav
+            class="navbar z-50 flex items-center justify-between h-[97px] text-white bg-transparenthover:bg-white/50 transition duration-500">
+
+            <div class="container-fluid flex justify-between items-center">
+                <div class="logo-container flex items-center">
+                    <a class="navbar-brand " href="#" id="brand">
+                        <img src="images/logo.png" alt="Logo" class="h-[85px] w-auto logo-hover drop-shadow-lg">
+                    </a>
+                </div>
+
+                <div
+                    class="navbar-center hidden md:flex items-center space-x-4 absolute left-1/2 transform -translate-x-1/2">
+                    <a href="index.html" class="nav-link px-4 py-2 rounded-lg font-medium">HOME</a>
+                    <a href="product_p.html" class="nav-link px-4 py-2 rounded-lg font-medium">PRODUCT</a>
+                    <a href="contact.html" class="nav-link px-4 py-2 rounded-lg font-medium">CONTACT</a>
+                    <a href="about.html" class="nav-link px-4 py-2 rounded-lg font-medium">ABOUT</a>
+                </div>
+
+                <!-- Right Side Icons -->
+                <div id="right-icons" class="flex items-center space-x-4 relative">
+                    <!-- Search icon only -->
+                    <button id="searchBtn"
+                        class="text-white hover:text-gray-200 transition-all duration-300 ease-out p-2 rounded-full hover:bg-white hover:bg-opacity-20 hover:scale-110 relative z-20">
+                        <i class="fas fa-search text-lg"></i>
+                    </button>
+
+                    <!-- Search input: hidden on mobile -->
+                    <input type="text" id="searchBar"
+                        class="search-bar px-4 py-2 rounded-full bg-white bg-opacity-90 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                        placeholder="Search here...">
+
+                    <!-- Cart -->
+                    <button
+                        class="cart-btnn  hover:text-gray-200 transition-all p-2 rounded-full hover:bg-white hover:bg-opacity-20 flex items-center relative z-20"
+                        id="cart-toggle">
+                        <i class="fas fa-shopping-cart text-lg"></i>
+                        <span class="cart-text text-sm font-medium">Cart</span>
+
+                    </button>
+
+                    <!-- Account -->
+                    <button
+                        class="account-btn text-white hover:text-gray-200 transition-all p-2 rounded-full hover:bg-white hover:bg-opacity-20 flex items-center relative z-20">
+                        <i class="fas fa-user text-lg"></i>
+                        <span class="account-text text-sm font-medium">Account</span>
+                    </button>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobileMenuBtn"
+                        class="md:hidden text-white hover:text-gray-200 transition-colors p-2 relative z-20">
+                        <i class="fas fa-bars text-lg"></i>
+                    </button>
+                </div>
+
+                <div id="mobileMenu"
+                    class="mobile-menu md:hidden absolute top-full left-0 w-full bg-black bg-opacity-95 backdrop-blur-lg">
+                    <div class="flex flex-col space-y-4 p-6">
+                        <a href="#" class="nav-link text-white px-4 py-3 rounded-lg font-medium">HOME</a>
+                        <a href="#" class="nav-link text-white px-4 py-3 rounded-lg font-medium">PRODUCT</a>
+                        <a href="#" class="nav-link text-white px-4 py-3 rounded-lg font-medium">CONTACT</a>
+                        <a href="#" class="nav-link text-white px-4 py-3 rounded-lg font-medium">ABOUT</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero section -->
+        <section class="hero-section relative w-full h-[90vh] pt-[0px] overflow-hidden">
+            <div class=" hero-slider">
+                <!-- Slide 1 -->
+                <div class="slide active">
+                    <div class="slide-background"></div>
+                    <div class="slide-overlay"></div>
+                    <div class="slide-content">
+                        <h1>Welcome to Our Amazing Platform</h1>
+                        <p>Discover innovative solutions that transform your business and drive success in the digital
+                            age.
+                        </p>
+                        <a href="#" class="hero-btn">
+                            <i class="fas fa-rocket me-2"></i>Get Started
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="slide">
+                    <div class="slide-background"></div>
+                    <div class="slide-overlay"></div>
+                    <div class="slide-content">
+                        <h1>Innovation Meets Excellence</h1>
+                        <p>Experience cutting-edge technology designed to elevate your brand and exceed expectations.
+                        </p>
+                        <a href="#" class="hero-btn">
+                            <i class="fas fa-star me-2"></i>View More
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="slide">
+                    <div class="slide-background"></div>
+                    <div class="slide-overlay"></div>
+                    <div class="slide-content">
+                        <h1>Your Success Story Starts Here</h1>
+                        <p>Join thousands of satisfied customers who have transformed their vision into reality with us.
+                        </p>
+                        <a href="#" class="hero-btn">
+                            <i class="fas fa-users me-2"></i>Shop Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Slide 4 - Video Example -->
+                <div class="slide">
+                    <div class="slide-background"></div>
+                    <div class="slide-overlay"></div>
+                    <div class="slide-content">
+                        <h1>Experience the Future</h1>
+                        <p>Step into tomorrow with our revolutionary approach to digital transformation and growth.</p>
+                        <a href="#" class="hero-btn">
+                            <i class="fas fa-play me-2"></i>Watch Demo
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Arrows -->
+            <button class="slider-arrow prev" onclick="changeSlide(-1)">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="slider-arrow next" onclick="changeSlide(1)">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+
+            <!-- Navigation Dots -->
+            <div class="slider-nav">
+                <div class="nav-dot active" onclick="currentSlide(1)"></div>
+                <div class="nav-dot" onclick="currentSlide(2)"></div>
+                <div class="nav-dot" onclick="currentSlide(3)"></div>
+                <div class="nav-dot" onclick="currentSlide(4)"></div>
+            </div>
+        </section>
+    </header>
+    <!-- -----product section---- -->
+    <div class="container mx-auto px-4 py-12">
+        <!-- Section Header -->
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold text-gray-800 mb-4">Premium Soap Collection</h2>
+            <p class="text-gray-600 text-lg">Discover our handcrafted soaps made with natural ingredients</p>
+        </div>
+
+        <!-- Product Section -->
+        <div class="relative">
+            <!-- Navigation Buttons -->
+            <button id="scrollLeft"
+                class="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white shadow-lg rounded-full p-3 hover:bg-gray-50 transition-all duration-300 hover:scale-110">
+                <i class="fas fa-chevron-left text-gray-600 text-xl"></i>
+            </button>
+
+            <button id="scrollRight"
+                class="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white shadow-lg rounded-full p-3 hover:bg-gray-50 transition-all duration-300 hover:scale-110">
+                <i class="fas fa-chevron-right text-gray-600 text-xl"></i>
+            </button>
+
+            <!-- Products Container -->
+            <div id="productContainer" class="product-container flex gap-6 overflow-x-auto px-12 py-4">
+
+                <!-- product card 1 -->
+                <div class="product-card soap-card-bg rounded-2xl overflow-hidden relative group max-w-[250px]">
+                    <!-- Image Wrapper -->
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="images/beehive_bliss.jpg" alt="Charcoal Soap"
+                            class="object-cover w-full h-full rounded-lg" />
+                        <!-- ✅ Floating Add to Cart button inside image -->
+                        <button
+                            class="cart-btn absolute bottom-2 right-2 bg-purple-600 hover:bg-purple-700 text-white px-3 py-2 rounded-lg font-medium text-sm transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-105 shadow-lg"
+                            data-product="MacBook Pro M3" data-price="2499">
+                            <i class="fas fa-cart-plus mr-1"></i>Add
+                        </button>
+                        <!-- ✅ Star Rating -->
+                        <div class="rating-stars absolute top-4 right-4 bg-white bg-opacity-90 rounded-full px-3 py-1">
+                            <div class="flex items-center gap-1">
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-gray-300 text-sm"></i>
+                                <span class="text-sm font-medium text-gray-700 ml-1">4.3</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Info (NO static button here) -->
+                    <div class="p-4 relative">
+                        <h3 class="font-bold text-lg text-gray-800 mb-2">Rose Garden Soap</h3>
+                        <p class="text-gray-600 text-sm mb-3">Natural rose extract with moisturizing properties.</p>
+                        <span class="text-2xl font-bold text-purple-600">$12.99</span>
+
+                        <!-- Optional description overlay stays same -->
+                        <div
+                            class="description-overlay absolute inset-0 bg-white bg-opacity-95 p-4 flex flex-col justify-center">
+                            <h3 class="font-bold text-lg text-gray-800 mb-3">Rose Garden Soap</h3>
+                            <p class="text-gray-600 text-sm mb-4">Handcrafted with organic rose petals and natural oils.
+                                Provides deep moisturization with a delicate floral fragrance.</p>
+                            <div class="flex items-center justify-between">
+                                <a href="#"
+                                    class="text-purple-600 hover:text-purple-800 font-medium text-sm flex items-center">
+                                    View More <i class="fas fa-arrow-right ml-1"></i>
+                                </a>
+                                <span class="text-xl font-bold text-purple-600">$12.99</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Product Card 2 -->
+                <div class="product-card soap-card-bg rounded-2xl overflow-hidden relative group max-w-[250px]">
+                    <!-- Image Wrapper -->
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="images/soap.jpg" alt="Charcoal Soap" class="object-cover w-full h-full rounded-lg" />
+
+                        <!-- ✅ Floating Add to Cart button inside image -->
+                        <button
+                            class="cart-btn absolute bottom-2 right-2 bg-purple-600 hover:bg-purple-700 text-white px-3 py-2 rounded-lg font-medium text-sm transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-105 shadow-lg"
+                            data-product="MacBook Pro M3" data-price="2499">
+                            <i class="fas fa-cart-plus mr-1"></i>Add
+                        </button>
+                        <!-- ✅ Star Rating -->
+                        <div class="rating-stars absolute top-4 right-4 bg-white bg-opacity-90 rounded-full px-3 py-1">
+                            <div class="flex items-center gap-1">
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-gray-300 text-sm"></i>
+                                <span class="text-sm font-medium text-gray-700 ml-1">4.3</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product Info (NO static button here) -->
+
+                    <div class="p-4 relative">
+                        <h3 class="font-bold text-lg text-gray-800 mb-2">Mint Fresh Soap</h3>
+                        <p class="text-gray-600 text-sm mb-3">Refreshing mint with cooling sensationvhjvjcghxfvhg
+                        </p>
+                        <span class="text-2xl font-bold text-purple-600">$10.99</span>
+
+                        <!-- Optional description overlay stays same -->
+                        <div
+                            class="description-overlay absolute inset-0 bg-white bg-opacity-95 p-4 flex flex-col justify-center">
+                            <h3 class="font-bold text-lg text-gray-800 mb-3">Mint Fresh Soap</h3>
+                            <p class="text-gray-600 text-sm mb-4">Energizing mint soap that awakens your senses.
+                                Perfect
+                                for morning use with its invigorating scent and cooling properties that refresh your
+                                skin.</p>
+                            <div class="flex items-center justify-between">
+                                <a href="#"
+                                    class="text-purple-600 hover:text-purple-800 font-medium text-sm flex items-center">
+                                    View More <i class="fas fa-arrow-right ml-1"></i>
+                                </a>
+                                <span class="text-xl font-bold text-purple-600">$10.99</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="product-card soap-card-bg rounded-2xl overflow-hidden relative group max-w-[250px]">
+                    <!-- Image Wrapper -->
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="images/orange.jpg" alt="Charcoal Soap"
+                            class="object-cover w-full h-full rounded-lg" />
+
+                        <!-- ✅ Floating Add to Cart button inside image -->
+                        <button
+                            class="cart-btn absolute bottom-2 right-2 bg-purple-600 hover:bg-purple-700 text-white px-3 py-2 rounded-lg font-medium text-sm transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-105 shadow-lg"
+                            data-product="MacBook Pro M3" data-price="2499">
+                            <i class="fas fa-cart-plus mr-1"></i>Add
+                        </button>
+                        <!-- ✅ Star Rating -->
+                        <div class="rating-stars absolute top-4 right-4 bg-white bg-opacity-90 rounded-full px-3 py-1">
+                            <div class="flex items-center gap-1">
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star-half-alt text-yellow-400 text-sm"></i>
+                                <span class="text-sm font-medium text-gray-700 ml-1">4.5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product Info (NO static button here) -->
+                    <div class="p-4 relative">
+                        <h3 class="font-bold text-lg text-gray-800 mb-2">Citrus Burst Soap</h3>
+                        <p class="text-gray-600 text-sm mb-3">Energizing citrus blend for morning
+                            freshnessvgcjghxcjgf
+                        </p>
+
+                        <span class="text-2xl font-bold text-purple-600">$11.99</span>
+
+                        <!-- Optional description overlay stays same -->
+
+                        <div
+                            class="description-overlay absolute inset-0 bg-white bg-opacity-95 p-4 flex flex-col justify-center">
+                            <h3 class="font-bold text-lg text-gray-800 mb-3">Citrus Burst Soap</h3>
+                            <p class="text-gray-600 text-sm mb-4">Zesty citrus soap packed with vitamin C and
+                                natural
+                                fruit extracts. Brightens your skin while providing an uplifting aromatherapy
+                                experience.</p>
+                            <div class="flex items-center justify-between">
+                                <a href="#"
+                                    class="text-purple-600 hover:text-purple-800 font-medium text-sm flex items-center">
+                                    View More <i class="fas fa-arrow-right ml-1"></i>
+                                </a>
+                                <span class="text-xl font-bold text-purple-600">$11.99</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 4 -->
+                <div class="product-card soap-card-bg rounded-2xl overflow-hidden relative group max-w-[250px]">
+                    <!-- Image Wrapper -->
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="images/label.jpg" alt="Charcoal Soap" class="object-cover w-full h-full rounded-lg" />
+                        <!-- ✅ Floating Add to Cart button inside image -->
+                        <button
+                            class="cart-btn absolute bottom-2 right-2 bg-purple-600 hover:bg-purple-700 text-white px-3 py-2 rounded-lg font-medium text-sm transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-105 shadow-lg"
+                            data-product="MacBook Pro M3" data-price="2499">
+                            <i class="fas fa-cart-plus mr-1"></i>Add
+                        </button>
+                        <!-- ✅ Star Rating -->
+                        <div class="rating-stars absolute top-4 right-4 bg-white bg-opacity-90 rounded-full px-3 py-1">
+                            <div class="flex items-center gap-1">
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <span class="text-sm font-medium text-gray-700 ml-1">4.9</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product Info (NO static button here) -->
+                    <div class="p-4 relative">
+                        <h3 class="font-bold text-lg text-gray-800 mb-2">Lavender Dreams</h3>
+                        <p class="text-gray-600 text-sm mb-3">Calming lavender for relaxation and sleepnvhchgcghh
+                        </p>
+                        <span class="text-2xl font-bold text-purple-600">$13.99</span>
+
+                        <!-- Optional description overlay stays same -->
+                        <div
+                            class="description-overlay absolute inset-0 bg-white bg-opacity-95 p-4 flex flex-col justify-center">
+                            <h3 class="font-bold text-lg text-gray-800 mb-3">Lavender Dreams</h3>
+                            <p class="text-gray-600 text-sm mb-4">Soothing lavender soap infused with essential
+                                oils.
+                                Perfect for evening routines, promoting relaxation and peaceful sleep.</p>
+                            <div class="flex items-center justify-between">
+                                <a href="#"
+                                    class="text-purple-600 hover:text-purple-800 font-medium text-sm flex items-center">
+                                    View More <i class="fas fa-arrow-right ml-1"></i>
+                                </a>
+                                <span class="text-xl font-bold text-purple-600">$13.99</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 5 -->
+                <div class="product-card soap-card-bg rounded-2xl overflow-hidden relative group max-w-[250px]">
+                    <!-- Image Wrapper -->
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="images/coffee.jpg" alt="Charcoal Soap"
+                            class="object-cover w-full h-full rounded-lg" />
+                        <!-- ✅ Floating Add to Cart button inside image -->
+                        <button
+                            class="cart-btn absolute bottom-2 right-2 bg-purple-600 hover:bg-purple-700 text-white px-3 py-2 rounded-lg font-medium text-sm transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-105 shadow-lg"
+                            data-product="MacBook Pro M3" data-price="2499">
+                            <i class="fas fa-cart-plus mr-1"></i>Add
+                        </button>
+                        <!-- ✅ Star Rating -->
+                        <div class="rating-stars absolute top-4 right-4 bg-white bg-opacity-90 rounded-full px-3 py-1">
+                            <div class="flex items-center gap-1">
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-gray-300 text-sm"></i>
+                                <span class="text-sm font-medium text-gray-700 ml-1">4.3</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Info (NO static button here) -->
+                    <div class="p-4 relative">
+                        <h3 class="font-bold text-lg text-gray-800 mb-2">Ocean Breeze</h3>
+                        <p class="text-gray-600 text-sm mb-3">Fresh marine scent with sea mineralsxgfxgfxgfxg</p>
+                        <span class="text-2xl font-bold text-purple-600">$14.99</span>
+
+                        <!-- Optional description overlay stays same -->
+                        <div
+                            class="description-overlay absolute inset-0 bg-white bg-opacity-95 p-4 flex flex-col justify-center">
+                            <h3 class="font-bold text-lg text-gray-800 mb-3">Ocean Breeze</h3>
+                            <p class="text-gray-600 text-sm mb-4">Refreshing ocean-inspired soap enriched with sea
+                                minerals and marine extracts. Cleanses deeply while nourishing your skin with
+                                oceanic
+                                goodness.</p>
+                            <div class="flex items-center justify-between">
+                                <a href="#"
+                                    class="text-purple-600 hover:text-purple-800 font-medium text-sm flex items-center">
+                                    View More <i class="fas fa-arrow-right ml-1"></i>
+                                </a>
+                                <span class="text-xl font-bold text-purple-600">$14.99</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product Card 6 -->
+                <div class="product-card soap-card-bg rounded-2xl overflow-hidden relative group max-w-[250px]">
+                    <!-- Image Wrapper -->
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="images/beehive_bliss.jpg" alt="Charcoal Soap"
+                            class="object-cover w-full h-full rounded-lg" />
+                        <!-- ✅ Floating Add to Cart button inside image -->
+                        <button
+                            class="cart-btn absolute bottom-2 right-2 bg-purple-600 hover:bg-purple-700 text-white px-3 py-2 rounded-lg font-medium text-sm transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-105 shadow-lg"
+                            data-product="MacBook Pro M3" data-price="2499">
+                            <i class="fas fa-cart-plus mr-1"></i>Add
+                        </button>
+                        <!-- ✅ Star Rating -->
+                        <div class="rating-stars absolute top-4 right-4 bg-white bg-opacity-90 rounded-full px-3 py-1">
+                            <div class="flex items-center gap-1">
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-gray-300 text-sm"></i>
+                                <span class="text-sm font-medium text-gray-700 ml-1">4.3</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Info (NO static button here) -->
+                    <div class="p-4 relative">
+                        <h3 class="font-bold text-lg text-gray-800 mb-2">Lavender Dreams</h3>
+                        <p class="text-gray-600 text-sm mb-3">Calming lavender for relaxation and sleepnvhchgcghh hello
+                        </p>
+                        <span class="text-2xl font-bold text-purple-600">$13.99</span>
+
+                        <!-- Optional description overlay stays same -->
+                        <div
+                            class="description-overlay absolute inset-0 bg-white bg-opacity-95 p-4 flex flex-col justify-center">
+                            <h3 class="font-bold text-lg text-gray-800 mb-3">Lavender Dreams</h3>
+                            <p class="text-gray-600 text-sm mb-4">Soothing lavender soap infused with essential
+                                oils.
+                                Perfect for evening routines, promoting relaxation and peaceful sleep.</p>
+                            <div class="flex items-center justify-between">
+                                <a href="#"
+                                    class="text-purple-600 hover:text-purple-800 font-medium text-sm flex items-center">
+                                    View More <i class="fas fa-arrow-right ml-1"></i>
+                                </a>
+                                <span class="text-xl font-bold text-purple-600">$13.99</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- -----about section------- -->
+    <section class="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <!-- Floating Soap Bubbles -->
+        <div class="soap-bubble"></div>
+        <div class="soap-bubble"></div>
+        <div class="soap-bubble"></div>
+
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <!-- Content Side -->
+                <div class="space-y-8 fade-in-left">
+                    <!-- Header -->
+                    <div class="space-y-4">
+                        <div
+                            class="quality-badge inline-flex items-center px-4 py-2 rounded-full text-white text-sm font-medium stagger-1">
+                            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                            Premium Quality Guaranteed
+                        </div>
+
+                        <h2 class="text-4xl lg:text-5xl font-playfair font-bold gradient-text leading-tight stagger-2">
+                            Crafting Pure
+                            <span class="block">Natural Beauty</span>
+                        </h2>
+
+                        <p class="text-lg text-gray-600 leading-relaxed stagger-3">
+                            Discover the art of natural skincare with our handcrafted soap collection
+                        </p>
+                    </div>
+
+                    <!-- Main Description -->
+                    <div class="space-y-6 stagger-4">
+                        <p class="text-gray-700 leading-relaxed text-lg">
+                            At <span class="font-semibold text-purple-700">Beehive Bliss</span>, we believe that
+                            true
+                            beauty comes from nature's finest ingredients. Our artisanal soaps are meticulously
+                            handcrafted using traditional methods passed down through generations, combined with
+                            modern
+                            skincare science.
+                        </p>
+
+                        <p class="text-gray-700 leading-relaxed">
+                            Each bar is infused with premium natural oils, botanical extracts, and pure honey from
+                            our
+                            own beehives. We source only the highest quality ingredients, ensuring every soap
+                            delivers
+                            exceptional cleansing while nourishing and protecting your skin's natural barrier.
+                        </p>
+                    </div>
+
+                    <!-- Features Grid -->
+                    <div class="grid sm:grid-cols-2 gap-6 stagger-5">
+                        <div
+                            class="bg-white/70 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:shadow-lg transition-all duration-300 floating-animation">
+                            <div
+                                class="w-12 h-12 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-lg flex items-center justify-center mb-4">
+                                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path
+                                        d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
+                                </svg>
+                            </div>
+                            <h3 class="font-semibold text-gray-800 mb-2">100% Natural</h3>
+                            <p class="text-gray-600 text-sm">No harsh chemicals, only pure botanical ingredients</p>
+                        </div>
+
+                        <div
+                            class="bg-white/70 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:shadow-lg transition-all duration-300 floating-delayed">
+                            <div
+                                class="w-12 h-12 bg-gradient-to-br from-green-400 to-blue-500 rounded-lg flex items-center justify-center mb-4">
+                                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <h3 class="font-semibold text-gray-800 mb-2">Handcrafted</h3>
+                            <p class="text-gray-600 text-sm">Artisanal quality with attention to every detail</p>
+                        </div>
+
+                        <div
+                            class="bg-white/70 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:shadow-lg transition-all duration-300 floating-animation">
+                            <div
+                                class="w-12 h-12 bg-gradient-to-br from-purple-400 to-pink-500 rounded-lg flex items-center justify-center mb-4">
+                                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path
+                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                            </div>
+                            <h3 class="font-semibold text-gray-800 mb-2">Premium Quality</h3>
+                            <p class="text-gray-600 text-sm">Luxurious feel with long-lasting fragrance</p>
+                        </div>
+
+                        <div
+                            class="bg-white/70 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:shadow-lg transition-all duration-300 floating-delayed">
+                            <div
+                                class="w-12 h-12 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-lg flex items-center justify-center mb-4">
+                                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <h3 class="font-semibold text-gray-800 mb-2">Skin Loving</h3>
+                            <p class="text-gray-600 text-sm">Gentle formulation suitable for all skin types</p>
+                        </div>
+                    </div>
+
+                    <!-- CTA Button -->
+                    <div class="pt-4">
+                        <button
+                            class="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold py-4 px-8 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+                            Explore Our Collection
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Image Side -->
+                <div class="relative fade-in-right">
+                    <div class="image-container">
+                        <img src="images/beehive_bliss.jpg" alt="Premium Natural Soap Collection"
+                            class="w-full h-auto object-cover rounded-2xl">
+                    </div>
+
+                    <!-- Decorative Elements -->
+                    <div
+                        class="absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full opacity-20 floating-animation">
+                    </div>
+                    <div
+                        class="absolute -bottom-8 -left-8 w-32 h-32 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full opacity-20 floating-delayed">
+                    </div>
+
+                    <!-- Quality Badge Overlay -->
+                    <div class="absolute top-6 left-6 bg-white/90 backdrop-blur-sm rounded-full px-4 py-2 shadow-lg">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                            <span class="text-sm font-medium text-gray-800">Premium Quality</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ingredients Section -->
+    <section class="py-0">
+        <h1 class="main-title fade-in">Natural Ingredients</h1>
+        <div class="container">
+            <div class="row ingredients-grid">
+                <div class="col-lg-4 col-md-6">
+                    <div class="ingredient-card fade-in">
+                        <div class="benefits-badge">Healing</div>
+                        <div class="ingredient-icon">🌿</div>
+                        <h3 class="ingredient-title">Aloe Vera</h3>
+                        <p class="ingredient-description">
+                            Nature’s miracle plant that soothes, heals, and deeply nourishes sensitive skin with
+                            rich
+                            vitamins and minerals.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="ingredient-card fade-in">
+                        <div class="benefits-badge">Relaxing</div>
+                        <div class="ingredient-icon">💜</div>
+                        <h3 class="ingredient-title">Lavender</h3>
+                        <p class="ingredient-description">
+                            Calms both mind and skin with gentle antiseptic properties and relaxing fragrance.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="ingredient-card fade-in">
+                        <div class="benefits-badge">Moisturizing</div>
+                        <div class="ingredient-icon">🥥</div>
+                        <h3 class="ingredient-title">Coconut Oil</h3>
+                        <p class="ingredient-description">
+                            Deeply moisturizes and protects skin’s natural barrier with rich fatty acids.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="ingredient-card fade-in">
+                        <div class="benefits-badge">Anti-aging</div>
+                        <div class="ingredient-icon">🍯</div>
+                        <h3 class="ingredient-title">Raw Honey</h3>
+                        <p class="ingredient-description">
+                            Natural humectant with antibacterial and anti-aging benefits for glowing skin.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="ingredient-card fade-in">
+                        <div class="benefits-badge">Nourishing</div>
+                        <div class="ingredient-icon">🌹</div>
+                        <h3 class="ingredient-title">Shea Butter</h3>
+                        <p class="ingredient-description">
+                            Packed with vitamins A and E to repair dry skin and retain moisture.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="ingredient-card fade-in">
+                        <div class="benefits-badge">Exfoliating</div>
+                        <div class="ingredient-icon">🌾</div>
+                        <h3 class="ingredient-title">Oatmeal</h3>
+                        <p class="ingredient-description">
+                            Gently exfoliates while soothing inflammation and cleansing all skin types.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Gallery Section -->
+    <section class="py-16 px-4 max-w-7xl mx-auto">
+        <!-- Section Header -->
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold text-gray-800 mb-4">Our Product Gallery</h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">Discover our amazing collection of products through
+                this
+                creative visual showcase</p>
+        </div>
+
+        <!-- Masonry Gallery Grid -->
+        <div id="gallery-container" class="masonry-grid">
+            <!-- Initial Gallery Items -->
+            <div class="masonry-item">
+                <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="bg-gradient-to-br from-blue-400 to-purple-500 h-48 flex items-center justify-center">
+                        <img src="images/beehive_bliss.jpg">
+                    </div>
+                </div>
+            </div>
+
+            <div class="masonry-item">
+                <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="w-full h-64 relative overflow-hidden rounded-lg shadow-md">
+                        <img src="images/charcoal.jpg" alt=""
+                            class="absolute top-0 left-0 w-full h-full object-cover" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="masonry-item">
+                <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="w-full h-64 relative overflow-hidden rounded-lg shadow-md">
+                        <img src="images/soap.jpg" alt="" class="absolute top-0 left-0 w-full h-full object-cover" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="masonry-item">
+                <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="w-full h-64 relative overflow-hidden rounded-lg shadow-md">
+                        <img src="images/orange.jpg" alt="" class="absolute top-0 left-0 w-full h-full object-cover" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="masonry-item">
+                <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="w-full h-64 relative overflow-hidden rounded-lg shadow-md">
+                        <img src="images/label.jpg" alt="" class="absolute top-0 left-0 w-full h-full object-cover" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="masonry-item">
+                <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="w-full h-64 relative overflow-hidden rounded-lg shadow-md">
+                        <img src="images/coffee.jpg" alt="" class="absolute top-0 left-0 w-full h-full object-cover" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="masonry-item">
+                <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="w-full h-64 relative overflow-hidden rounded-lg shadow-md">
+                        <img src="images/charcoal.jpg" alt=""
+                            class="absolute top-0 left-0 w-full h-full object-cover" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="masonry-item">
+                <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="w-full h-64 relative overflow-hidden rounded-lg shadow-md">
+                        <img src="images/beehive_bliss.jpg" alt=""
+                            class="absolute top-0 left-0 w-full h-full object-cover" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Load More Button -->
+        <div class="text-center mt-12">
+            <button id="loadMoreBtn"
+                class="load-more-btn text-white px-8 py-3 rounded-full font-semibold text-lg shadow-lg">
+                Load More Products
+            </button>
+        </div>
+    </section>
+    <!-- Customer Reviews Section -->
+    <section class="py-16 px-4 max-w-6xl mx-auto">
+        <!-- Section Header -->
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold text-gray-800 mb-4">What Our Customers Say</h2>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">Real reviews from real customers who love our
+                products.
+                Join thousands of satisfied customers!</p>
+            <div class="flex items-center justify-center mt-6 space-x-4">
+                <div class="flex items-center">
+                    <div class="flex text-yellow-400 text-xl">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <span class="ml-2 text-gray-600 font-semibold">4.9/5 from 2,847 reviews</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add Review Form -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 mb-12 border border-gray-100">
+            <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                <i class="fas fa-edit text-blue-500 mr-3"></i>
+                Share Your Experience
+            </h3>
+
+            <form id="reviewForm" class="space-y-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Your Name</label>
+                        <input type="text" id="customerName" required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                            placeholder="Enter your name">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Rating</label>
+                        <div class="star-rating" id="starRating">
+                            <span class="star" data-rating="1"><i class="fas fa-star"></i></span>
+                            <span class="star" data-rating="2"><i class="fas fa-star"></i></span>
+                            <span class="star" data-rating="3"><i class="fas fa-star"></i></span>
+                            <span class="star" data-rating="4"><i class="fas fa-star"></i></span>
+                            <span class="star" data-rating="5"><i class="fas fa-star"></i></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Your Review</label>
+                    <textarea id="reviewText" required rows="4"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                        placeholder="Tell us about your experience with our product..."></textarea>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Add Photos (Optional)</label>
+                    <div class="flex items-center space-x-4">
+                        <label
+                            class="cursor-pointer bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg border-2 border-dashed border-gray-300 transition-all">
+                            <i class="fas fa-camera mr-2 text-gray-600"></i>
+                            <span class="text-gray-600">Choose Images</span>
+                            <input type="file" id="reviewImages" multiple accept="image/*" class="hidden">
+                        </label>
+                        <div id="imagePreview" class="flex space-x-2"></div>
+                    </div>
+                </div>
+
+                <button type="submit"
+                    class="gradient-bg text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-200">
+                    <i class="fas fa-paper-plane mr-2"></i>
+                    Submit Review
+                </button>
+            </form>
+        </div>
+
+        <!-- Reviews Display -->
+        <div id="reviewsContainer" class="space-y-6">
+            <!-- Sample reviews will be loaded here -->
+        </div>
+
+        <!-- Load More Button -->
+        <div class="text-center mt-12">
+            <button id="loadMoreBt"
+                class="bg-white text-gray-700 px-8 py-3 rounded-lg font-semibold border-2 border-gray-300 hover:border-blue-500 hover:text-blue-500 transition-all duration-200 shadow-md hover:shadow-lg">
+                <i class="fas fa-chevron-down mr-2"></i>
+                Load More Reviews
+            </button>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer-gradient footer-content mt-auto">
+        <div class="max-w-6xl mx-auto px-6 py-12">
+
+            <!-- Main Footer Content -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+
+                <!-- Contact Email -->
+                <div class="text-center md:text-left">
+                    <h3 class="text-white text-xl font-semibold mb-4">Get In Touch</h3>
+                    <div class="contact-item">
+                        <a href="mailto:hello@company.com"
+                            class="inline-flex items-center text-white/90 hover:text-white text-lg">
+                            <i class="fas fa-envelope mr-3 text-xl"></i>
+                            hello@company.com
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Details -->
+                <div class="text-center md:text-left">
+                    <h3 class="text-white text-xl font-semibold mb-4">Contact Info</h3>
+                    <div class="space-y-3">
+                        <div class="contact-item">
+                            <div class="inline-flex items-center text-white/90 hover:text-white">
+                                <i class="fas fa-phone mr-3 text-lg"></i>
+                                +1 (555) 123-4567
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="inline-flex items-center text-white/90 hover:text-white">
+                                <i class="fas fa-map-marker-alt mr-3 text-lg"></i>
+                                New York, NY 10001
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Icons -->
+                <div class="text-center lg:text-right">
+                    <h3 class="text-white text-xl font-semibold mb-4">Follow Us</h3>
+                    <div class="flex justify-center lg:justify-end space-x-4">
+                        <a href="#"
+                            class="social-icon bg-white/10 hover:bg-white/20 p-3 rounded-full text-white hover:text-white">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="#"
+                            class="social-icon bg-white/10 hover:bg-white/20 p-3 rounded-full text-white hover:text-white">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#"
+                            class="social-icon bg-white/10 hover:bg-white/20 p-3 rounded-full text-white hover:text-white">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#"
+                            class="social-icon bg-white/10 hover:bg-white/20 p-3 rounded-full text-white hover:text-white">
+                            <i class="fab fa-linkedin-in text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-white/20 pt-6">
+                <div class="flex flex-col md:flex-row justify-between items-center text-white/80 text-sm">
+                    <p>&copy; 2024 Your Company. All rights reserved.</p>
+                    <div class="flex space-x-6 mt-4 md:mt-0">
+                        <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                        <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

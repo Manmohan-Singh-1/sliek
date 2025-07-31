@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Banner with Moving Underline</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/index.js" defer></script>
+
+    <!-- Bootstrap & Font Awesome -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Your CSS -->
+    <link rel="stylesheet" href="css/index.css">
+
+</head>
+
+<body>
+    <!-- === Banner Section === -->
+    <div class="banner-wrapper">
+        <div class="banner-text">
+            <a href="#">Use code - 123456 to get 5% off and ENJOY!</a>
+        </div>
+        <div class="marquee-line"></div>
+    </div>
+    <!-- === Navigation Header === -->
+    <header>
+        <nav class="navbar z-50 flex items-center justify-between h-[97px] text-white hover:bg-white/50 transition duration-500"
+            style="background-color:rgba(255, 255, 255, 0.5);">
+
+            <div class="container-fluid flex justify-between items-center">
+                <div class="logo-container flex items-center">
+                    <a class="navbar-brand " href="#" id="brand">
+                        <img src="images/logo.png" alt="Logo" class="h-[85px] w-auto logo-hover drop-shadow-lg">
+                    </a>
+                </div>
+
+                <div
+                    class="navbar-center hidden md:flex items-center space-x-4 absolute left-1/2 transform -translate-x-1/2">
+                    <a href="index.html" class="nav-link px-4 py-2 rounded-lg font-medium">HOME</a>
+                    <a href="#" class="nav-link px-4 py-2 rounded-lg font-medium">PRODUCT</a>
+                    <a href="contact.html" class="nav-link px-4 py-2 rounded-lg font-medium">CONTACT</a>
+                    <a href="about.html
+                    " class="nav-link px-4 py-2 rounded-lg font-medium">ABOUT</a>
+                </div>
+
+                <!-- Right Side Icons -->
+                <div id="right-icons" class="flex items-center space-x-4 relative">
+                    <!-- Search icon only -->
+                    <button id="searchBtn"
+                        class="text-white hover:text-gray-200 transition-all duration-300 ease-out p-2 rounded-full hover:bg-white hover:bg-opacity-20 hover:scale-110 relative z-20">
+                        <i class="fas fa-search text-lg"></i>
+                    </button>
+
+                    <!-- Search input: hidden on mobile -->
+                    <input type="text" id="searchBar"
+                        class="search-bar px-4 py-2 rounded-full bg-white bg-opacity-90 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                        placeholder="Search here...">
+
+                    <!-- Cart -->
+                    <button
+                        class="cart-btnn  hover:text-gray-200 transition-all p-2 rounded-full hover:bg-white hover:bg-opacity-20 flex items-center relative z-20"
+                        id="cart-toggle">
+                        <i class="fas fa-shopping-cart text-lg"></i>
+                        <span class="cart-text text-sm font-medium">Cart</span>
+
+                    </button>
+
+                    <!-- Account -->
+                    <button
+                        class="account-btn text-white hover:text-gray-200 transition-all p-2 rounded-full hover:bg-white hover:bg-opacity-20 flex items-center relative z-20">
+                        <i class="fas fa-user text-lg"></i>
+                        <span class="account-text text-sm font-medium">Account</span>
+                    </button>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobileMenuBtn"
+                        class="md:hidden text-white hover:text-gray-200 transition-colors p-2 relative z-20">
+                        <i class="fas fa-bars text-lg"></i>
+                    </button>
+                </div>
+
+                <div id="mobileMenu"
+                    class="mobile-menu md:hidden absolute top-full left-0 w-full bg-black bg-opacity-95 backdrop-blur-lg">
+                    <div class="flex flex-col space-y-4 p-6">
+                        <a href="#" class="nav-link text-white px-4 py-3 rounded-lg font-medium">HOME</a>
+                        <a href="#" class="nav-link text-white px-4 py-3 rounded-lg font-medium">PRODUCT</a>
+                        <a href="#" class="nav-link text-white px-4 py-3 rounded-lg font-medium">CONTACT</a>
+                        <a href="#" class="nav-link text-white px-4 py-3 rounded-lg font-medium">ABOUT</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Hero Section -->
+    <section class="about-bg text-white" style="height: 95px;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col justify-end h-64 pb-10">
+        </div>
+    </section>
+
+
+
+    <div class="container mx-auto px-6 py-12">
+        <div class="flex flex-col md:flex-row productt-container">
+            <!-- Productt Gallery -->
+            <div class="md:w-1/2 productt-gallery mb-10 md:mb-0 md:pr-10">
+                <div class="mb-4 overflow-hidden rounded-lg">
+                    <img src="https://placehold.co/800x800"
+                        alt="Premium skincare serum bottle with amber glass dropper on marble surface"
+                        class="w-full h-auto object-cover productt-image rounded-lg" id="mainProducttImage">
+                </div>
+                <div class="grid grid-cols-4 gap-3">
+                    <div class="cursor-pointer border-2 border-transparent hover:border-gray-300 rounded overflow-hidden transition-all"
+                        onclick="changeMainImage('https://placehold.co/400x400')">
+                        <img src="https://placehold.co/400x400"
+                            alt="Close-up of amber glass serum dropper on white background"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <div class="cursor-pointer border-2 border-transparent hover:border-gray-300 rounded overflow-hidden transition-all"
+                        onclick="changeMainImage('https://placehold.co/400x400/2c3e50/FFFFFF')">
+                        <img src="https://placehold.co/400x400/2c3e50/FFFFFF"
+                            alt="Serum bottle with dropper next to fresh aloe vera leaves"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <div class="cursor-pointer border-2 border-transparent hover:border-gray-300 rounded overflow-hidden transition-all"
+                        onclick="changeMainImage('https://placehold.co/400x400/e8c7c7/000000')">
+                        <img src="https://placehold.co/400x400/e8c7c7/000000"
+                            alt="Woman applying serum to her face with clean fingers"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <div class="cursor-pointer border-2 border-transparent hover:border-gray-300 rounded overflow-hidden transition-all"
+                        onclick="changeMainImage('https://placehold.co/400x400/c44569/FFFFFF')">
+                        <img src="https://placehold.co/400x400/c44569/FFFFFF"
+                            alt="Sliek skincare serum box packaging with logo and productt information"
+                            class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Productt Info -->
+            <div class="md:w-1/2 productt-info">
+                <h1 class="text-3xl md:text-4xl font-bold mb-2" style="letter-spacing: 1px;">Radiant Renewal Serum
+                </h1>
+                <div class="flex items-center mb-4">
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <span class="text-gray-600 ml-2">(142 reviews)</span>
+                </div>
+                <p class="text-xl font-semibold text-gray-800 mb-6">$68.00</p>
+
+                <p class="text-gray-700 mb-8">Our award-winning serum infused with Vitamin C, Hyaluronic Acid, and
+                    botanical extracts to brighten, hydrate and protect your skin's natural barrier for a radiant
+                    complexion.</p>
+
+                <div class="mb-8">
+                    <p class="text-sm font-medium text-gray-700 mb-2">Size</p>
+                    <div class="flex space-x-2">
+                        <button
+                            class="px-4 py-2 border border-gray-300 rounded hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-var(--accent)">1
+                            oz</button>
+                        <button
+                            class="px-4 py-2 border border-gray-300 rounded hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-var(--accent)">2
+                            oz</button>
+                        <button
+                            class="px-4 py-2 border border-gray-300 rounded hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-var(--accent)">Travel
+                            Size</button>
+                    </div>
+                </div>
+
+                <div class="mb-8">
+                    <p class="text-sm font-medium text-gray-700 mb-2">Quantity</p>
+                    <div class="quantity-selector flex items-center border border-gray-300 rounded w-max">
+                        <button class="px-3 py-2 text-gray-600 hover:bg-gray-100"
+                            onclick="decrementQuantity()">-</button>
+                        <span class="px-4 py-2 border-x border-gray-300" id="quantity">1</span>
+                        <button class="px-3 py-2 text-gray-600 hover:bg-gray-100"
+                            onclick="incrementQuantity()">+</button>
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 mb-10">
+                    <button
+                        class="px-8 py-3 bg-black text-white rounded hover:bg-gray-800 transition-colors add-to-cart flex items-center justify-center space-x-2"
+                        onclick="addToCart()">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span>Add to Cart</span>
+                    </button>
+                    <button
+                        class="px-8 py-3 border border-black text-black rounded hover:bg-gray-100 transition-colors flex items-center justify-center space-x-2">
+                        <i class="far fa-heart"></i>
+                        <span>Wishlist</span>
+                    </button>
+                </div>
+
+                <div class="border-t border-gray-200 pt-6 mb-8">
+                    <h3 class="text-lg font-medium mb-4">Key Benefits</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <div class="benefit-icon p-4 rounded-lg text-center">
+                            <i class="fas fa-leaf text-xl mb-2 text-var(--accent)"></i>
+                            <p class="text-sm">Botanical Formula</p>
+                        </div>
+                        <div class="benefit-icon p-4 rounded-lg text-center">
+                            <i class="fas fa-allergies text-xl mb-2 text-var(--accent)"></i>
+                            <p class="text-sm">Non-Irritating</p>
+                        </div>
+                        <div class="benefit-icon p-4 rounded-lg text-center">
+                            <i class="fas fa-certificate text-xl mb-2 text-var(--accent)"></i>
+                            <p class="text-sm">Cruelty-Free</p>
+                        </div>
+                        <div class="benefit-icon p-4 rounded-lg text-center">
+                            <i class="fas fa-recycle text-xl mb-2 text-var(--accent)"></i>
+                            <p class="text-sm">Sustainable</p>
+                        </div>
+                        <div class="benefit-icon p-4 rounded-lg text-center">
+                            <i class="fas fa-seedling text-xl mb-2 text-var(--accent)"></i>
+                            <p class="text-sm">Vegan</p>
+                        </div>
+                        <div class="benefit-icon p-4 rounded-lg text-center">
+                            <i class="fas fa-clock text-xl mb-2 text-var(--accent)"></i>
+                            <p class="text-sm">Fast-Absorbing</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Productt Details -->
+        <div class="mt-20">
+            <div class="border-b border-gray-200 mb-8">
+                <ul class="flex flex-wrap -mb-px" id="detailTabs">
+                    <li class="mr-2">
+                        <button
+                            class="inline-block p-4 text-var(--accent) border-b-2 border-var(--accent) rounded-t-lg active"
+                            onclick="openTab('details')" id="defaultOpen">Details</button>
+                    </li>
+                    <li class="mr-2">
+                        <button
+                            class="inline-block p-4 text-gray-500 hover:text-gray-600 border-b-2 border-transparent hover:border-gray-300 rounded-t-lg"
+                            onclick="openTab('ingredients')">Ingredients</button>
+                    </li>
+                    <li class="mr-2">
+                        <button
+                            class="inline-block p-4 text-gray-500 hover:text-gray-600 border-b-2 border-transparent hover:border-gray-300 rounded-t-lg"
+                            onclick="openTab('how-to-use')">How To Use</button>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="details" class="tabcontent pb-10">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-medium mb-4">Productt Description</h3>
+                        <p class="text-gray-700 mb-6">Our Radiant Renewal Serum is formulated with a powerful blend
+                            of
+                            antioxidants, vitamins, and nourishing botanical extracts to target multiple signs of
+                            aging
+                            while promoting a healthy, luminous complexion.</p>
+                        <p class="text-gray-700">This lightweight yet potent serum absorbs quickly to deliver
+                            immediate
+                            hydration and visible brightening with regular use. Perfect for all skin types,
+                            including
+                            sensitive skin.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-medium mb-4">Why You'll Love It</h3>
+                        <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                            <li>Reduces appearance of fine lines and wrinkles</li>
+                            <li>Brightens dull skin and evens skin tone</li>
+                            <li>Improves skin elasticity and firmness</li>
+                            <li>Protects against environmental stressors</li>
+                            <li>Non-comedogenic and fragrance-free</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            </script>
+            <script>(function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'96551590959f3f68',t:'MTc1MzU0NTM1Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
+
+</body>
+
+</html>
